@@ -31,14 +31,23 @@ void Almacen::setCode(char* temp){
 	strcpy(code,  temp);
 }
 
-void Almacen::setCount(char* temp){
+void Almacen::setCount(int temp2){
 	//count = temp;
-	strcpy(count,  temp);
+	count = temp2;
 }
 
 void Almacen::setPrice(char* temp){
 	//price = temp;
 	strcpy(price,  temp);
+}
+
+void Almacen::setSuma(int temp){
+	//price = temp;
+	count+=temp;
+}
+void Almacen::setResta(int temp){
+	//price = temp;
+	count-=temp;
 }
 
 
@@ -58,7 +67,7 @@ char* Almacen::getCode(){
 	return code;
 }
 
-char* Almacen::getCount(){
+int Almacen::getCount(){
 	return count;
 }
 

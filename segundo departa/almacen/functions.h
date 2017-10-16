@@ -19,10 +19,10 @@ char* getPrice(){
 	return temp_value; // retornar valor
 }
 
-char* getCount(){
-	char temp_value[50]; // para ir recibiendo los valores de los pructos
+int getCount(){
+	int temp_value; // para ir recibiendo los valores de los pructos
 	printf("Numero de productos totales en almacen: ");
-	scanf("%s", temp_value);
+	scanf("%i", &temp_value);
 	return temp_value; // retornar valor
 }
 

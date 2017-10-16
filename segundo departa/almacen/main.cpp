@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
 
     //vars
     int num = 1, select;
-    char update[10];
+    int update;
     /*
 	array values
 	  0 > name
@@ -31,12 +31,91 @@ int main(int argc, char** argv) {
 	  4 > expiry
 	*/
     
+    //pedir productos #1
+    ob1->setName("Leche");
+    ob1->setCode("35463535");
+    ob1->setPrice("35");
+    ob1->setCount(60);
+    ob1->setExpiry("25/05/2017");
+
     
+    //pedir productos #2
+    ob2->setName("Arroz");
+    ob2->setCode("426356");
+    ob2->setPrice("13");
+    ob2->setCount(70);
+    ob2->setExpiry("22/09/2017");
+ 
     
+    //pedir productos #3
+    ob3->setName("Arina");
+    ob3->setCode("357537");
+    ob3->setPrice("80");
+    ob3->setCount(556);
+    ob3->setExpiry("08/05/2017");
+    num+=1;
+
+    //pedir productos #4
+    ob4->setName("Cafe");
+    ob4->setCode("6764846");
+    ob4->setPrice("5");
+    ob4->setCount(590);
+    ob4->setExpiry("25/05/2019");
+    num+=1;
+     //pedir productos #5
+    ob5->setName("Chocolate");
+    ob5->setCode("5764868");
+    ob5->setPrice("150");
+    ob5->setCount(34);
+    ob5->setExpiry("15/12/2017");
+    num+=1;
+
+    //pedir productos #6
+    ob6->setName("Pastel");
+    ob6->setCode("6856857");
+    ob6->setPrice("400");
+    ob6->setCount(15);
+    ob6->setExpiry("25/02/2019");
+    num+=1;
+     //pedir productos #7
+    ob7->setName("Plumas");
+    ob7->setCode("46537547");
+    ob7->setPrice("14");
+    ob7->setCount(80);
+    ob7->setExpiry("Nunca");
+    num+=1;
+
+    //pedir productos #8
+    ob8->setName("Mochila");
+    ob8->setCode("68658578");
+    ob8->setPrice("600");
+    ob8->setCount(68);
+    ob8->setExpiry("Nunca");
+    num+=1;
+ 
+    //pedir productos #9
+    ob9->setName("Playeras");
+    ob9->setCode("474574");
+    ob9->setPrice("330");
+    ob9->setCount(56);
+    ob9->setExpiry("Nunca");
+    num+=1;
+
+    //pedir productos #10
+    ob10->setName("Zapatos");
+    ob10->setCode("5757467");
+    ob10->setPrice("570");
+    ob10->setCount(90);
+    ob10->setExpiry("Nunca");
+    num+=1;
+    
+    //FIN DE PEDIR INFO
+    /*
     //pedir productos #1
     ob1->setName(getName(num));
     ob1->setCode(getCode());
     ob1->setPrice(getPrice());
+    
     ob1->setCount(getCount());
     ob1->setExpiry(getExpiry());
     num+=1;
@@ -112,57 +191,66 @@ int main(int argc, char** argv) {
     num+=1;
     
     //FIN DE PEDIR INFO
+    */
     
     do{
     	//imprimir el nombre de los productos
 	printf("\n\nProductos en almacen(nombre y disponibles):\n");
-    printf("1:%s ==> %s\n", ob1->getName(), ob1->getCount() );
-    printf("2:%s ==> %s\n", ob2->getName(), ob2->getCount() );
-    printf("3:%s ==> %s\n", ob3->getName(), ob3->getCount() );
-    printf("4:%s ==> %s\n", ob4->getName(), ob4->getCount() );
-    printf("5:%s ==> %s\n", ob5->getName(), ob5->getCount() );
-    printf("6:%s ==> %s\n", ob6->getName(), ob6->getCount() );
-    printf("7:%s ==> %s\n", ob7->getName(), ob7->getCount() );
-    printf("8:%s ==> %s\n", ob8->getName(), ob8->getCount() );
-    printf("9:%s ==> %s\n", ob9->getName(), ob9->getCount() );
-    printf("10:%s ==> %s\n", ob10->getName(), ob10->getCount() );
+    printf("1:%s ==> %i\n", ob1->getName(), ob1->getCount() );
+    printf("2:%s ==> %i\n", ob2->getName(), ob2->getCount() );
+    printf("3:%s ==> %i\n", ob3->getName(), ob3->getCount() );
+    printf("4:%s ==> %i\n", ob4->getName(), ob4->getCount() );
+    printf("5:%s ==> %i\n", ob5->getName(), ob5->getCount() );
+    printf("6:%s ==> %i\n", ob6->getName(), ob6->getCount() );
+    printf("7:%s ==> %i\n", ob7->getName(), ob7->getCount() );
+    printf("8:%s ==> %i\n", ob8->getName(), ob8->getCount() );
+    printf("9:%s ==> %i\n", ob9->getName(), ob9->getCount() );
+    printf("10:%s ==> %i\n", ob10->getName(), ob10->getCount() );
     
     //pedir cual editar
     printf(">>Ingrese el digito para editar el inventario: ");
     scanf("%i", &select);
-    printf("Ingrese el numero de articulos totales actuales: ");
-    scanf("%s", update);
-    	
-    	switch(select){
+
+    
+    printf("Desea sumar o restar, 1 para sumar y 0 para restar: ");
+    
+    int select2;
+    scanf("%i", &select2);
+    
+    printf("Ingrese cuantos productos desea afectar: ");
+    scanf("%i", &update);
+    
+    if(select2 == 1){
+    	    	switch(select){
     		case 1:
-    			ob1->setCount(update);
+    			ob1->setSuma(update);
     		break;
     		case 2:
-    			ob2->setCount(update);
+    			ob2->setSuma(update);
     		break;
     		case 3:
-    			ob3->setCount(update);
+    			ob3->setSuma(update);
     		break;
     		case 4:
-    			ob4->setCount(update);
+    			ob4->setSuma(update);
     		break;
     		case 5:
-    			ob5->setCount(update);
+    			ob5->setSuma(update);
     		break;
     		case 6:
-    			ob6->setCount(update);
+    			ob6->setSuma(update);
     		break;
     		case 7:
-    			ob7->setCount(update);
+    			ob7->setSuma(update);
     		break;
     		case 8:
-    			ob8->setCount(update);
+    			ob8->setSuma(update);
     		break;
     		case 9:
-    			ob9->setCount(update);
+    			ob9->setSuma(update);
     		break;
     		case 10:
-    			ob10->setCount(update);
+    			ob10->setSuma(update);
     		break;
 
             default:
@@ -171,6 +259,48 @@ int main(int argc, char** argv) {
 		}
 		
 		//END UPDATE 
+	}else{
+		    	    	switch(select){
+    		case 1:
+    			ob1->setResta(update);
+    		break;
+    		case 2:
+    			ob2->setResta(update);
+    		break;
+    		case 3:
+    			ob3->setResta(update);
+    		break;
+    		case 4:
+    			ob4->setResta(update);
+    		break;
+    		case 5:
+    			ob5->setResta(update);
+    		break;
+    		case 6:
+    			ob6->setResta(update);
+    		break;
+    		case 7:
+    			ob7->setResta(update);
+    		break;
+    		case 8:
+    			ob8->setResta(update);
+    		break;
+    		case 9:
+    			ob9->setResta(update);
+    		break;
+    		case 10:
+    			ob10->setResta(update);
+    		break;
+
+            default:
+	     	//error, no esta entre 1 y 10
+	     	printf("ERROR: Ingrese un digito entre 1 y 10...");		
+		}
+		
+	}
+    
+    	
+
 
     
     }while(1);
