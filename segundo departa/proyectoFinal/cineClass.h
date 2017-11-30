@@ -1,17 +1,20 @@
 class Cine{
-			
-	public:
-	   
 		char* names[50];//nombres
 		char* description[50]; // sinopsis
 		int chairs[50];// asientos
+			
+	public:
+	   
+	   int peliculasCount; //guardara el total de peliculas
+
 
 	   Cine();
 		
-//		//sets
-//		void saveNames(char*[50], int);
-//		void saveDescriptions(char*[50], int);
-//		void saveChairs(int*, int);
+		//sets
+		void setName(int, char*);
+		void setDescription(int, char*);
+		void setChairs(int, int);
+		bool setSaleByValue(int);
 		
 		//gets
 		char* getNameByValue(int);

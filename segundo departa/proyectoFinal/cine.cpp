@@ -3,33 +3,45 @@
 
 
 Cine::Cine(){
-	
+	//????
 			
 }
 
-//
-////sets
-//void Cine::saveNames(char* input[], int size){
-//	//guardar nombres
-//	for(int i=0;i<size;i++){
-//		names[i] =(char*) input[i];
-//			}
-//}
-//
-//
-//void Cine::saveDescriptions(char* input[], int size){
-//	//guardar nombres
-//	for(int i=0;i<size;i++){
-//		description[i] =(char*) input[i];
-//			}
-//}
-//
-//void Cine::saveChairs(int input[], int size){
-//	//guardar nombres
-//	for(int i=0;i<size;i++){
-//		chairs[i] = input[i];
-//			}
-//}
+
+
+
+//sets
+void Cine::setName(int x, char* value){
+	//guardar nombres
+	names[x] = value;
+}
+
+
+void Cine::setDescription(int x, char* value){
+	//guardar descripciones
+	description[x] = value;
+}
+
+void Cine::setChairs(int x, int value){
+	//guardar asientos
+	chairs[x] = value;
+}
+
+
+bool Cine::setSaleByValue(int value){
+	
+	//vender
+	if(chairs[value]){
+		//se vende
+		chairs[value]-=1;
+		return true;
+	}else{
+		//no se vende
+		return false;
+	}
+	
+}
+
 
 //gets
 char* Cine::getNameByValue(int value){
